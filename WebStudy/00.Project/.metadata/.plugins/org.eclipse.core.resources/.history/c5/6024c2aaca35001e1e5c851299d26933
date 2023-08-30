@@ -1,0 +1,74 @@
+.page-title {
+    padding-left: 15px;
+}
+
+.divider {
+    border-bottom: 1px solid #323232;
+}
+
+.form-container {
+    /* Style for the overall form container */
+}
+
+.community-form {
+    /* Style for the form itself */
+}
+
+.category-selection {
+    font-size: 15px;
+    width: 425px;
+    height: 30px;
+	margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #c0c0c0;
+    margin-left: 6px;
+}
+
+.category-label {
+	margin-left: 6px;
+ 	padding-top: 4px;
+}
+
+.category-select {
+	margin-left: 120px;
+
+	
+}
+
+.title-input {
+    
+}
+
+.title-field {
+	margin-bottom: 15px;
+    margin-left: 6px;
+    padding-left: 6px;
+    width: 270px;
+    height: 30px;
+    border: 1px solid #c0c0c0;
+	
+}
+
+.file-field {
+	margin-left: 6px;
+}
+
+.content-input {
+    min-height: 200px;
+}
+
+.content-field {
+    margin-left: 6px;
+}
+
+.submit-button {
+    /* Style for the submit button */
+}
+
+.file-input {
+	margin-bottom: 15px;
+}
+
+
+
+

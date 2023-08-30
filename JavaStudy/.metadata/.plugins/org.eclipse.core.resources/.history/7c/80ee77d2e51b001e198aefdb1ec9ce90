@@ -1,0 +1,14 @@
+package 보충수업;
+
+public class PBKJajangmyeon {
+	
+	public void makeJajang() {
+		System.out.println("짜장면을 다 만들고 마무리로 계란후라이");
+	}
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,25 @@
+package ex02연산자;
+
+public class test {
+
+	public static void main(String[] args) {
+		String name = "김미희";
+		
+		switch (name) {
+		case "박병관":
+			System.out.println("박병관");
+		case "김미희":
+			System.out.println("김미희");
+		
+		case "이명훈":
+			System.out.println("이명훈");
+			break;
+		default:
+			System.out.println("이명호");
+			break;
+			
+		}
+
+	}
+
+}

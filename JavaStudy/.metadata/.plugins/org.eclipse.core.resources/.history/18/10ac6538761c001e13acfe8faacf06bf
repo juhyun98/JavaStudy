@@ -1,0 +1,45 @@
+package sample;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		while (true) {
+			System.out.print("1.회원가입 2.로그인 3.회원목록 4.회원정보수정 5.회원탈퇴 6.종료 >> ");
+			int menu = sc.nextInt();
+			
+			if (menu == 1) {
+				System.out.println("======회원가입======");
+				//아이디, 비밀번호, 닉네임
+				System.out.print("아이디 입력 : ");
+				String id = sc.next();
+				System.out.println("비밀번호 입력 : ");
+				String pw = sc.next();
+				System.out.println("닉네임 입력 : ");
+				String nick = sc.next();
+				
+			}else if (menu == 2) {
+				
+			}else if (menu == 3) {
+				
+			}else if (menu == 4) {
+				
+			}else if (menu == 5) {
+				
+			}else if (menu == 6) {
+				System.out.println("프로그램을 종료합니다.");
+				break;
+			}else {
+				System.out.println("정확한 숫자를 입력해주세요.");
+			}
+		}
+		
+		
+	}
+
+}

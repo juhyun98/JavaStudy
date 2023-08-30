@@ -1,0 +1,18 @@
+package 보충수업;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// 박병관 짜장면집
+		PBKJajangmyeon pbk = new PBKJajangmyeon();
+		pbk.makeJajang();
+		
+		// 박충현 짜장면집
+		PCHJajangmyeon pch = new PCHJajangmyeon();
+		pch.makeJajang();
+		
+		
+		
+	}
+
+}

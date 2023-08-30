@@ -1,0 +1,63 @@
+.bbs-title {
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-id {
+    margin-left: 16px;
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: 0px;
+}
+
+.user-divider {
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: rgb(102, 102, 102);
+}
+
+.user-date {
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgb(153, 153, 153);
+    white-space: nowrap;
+}
+
+.bbs-content {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: rgb(0, 0, 0);
+}
+
+.content-text {
+    display: block;
+    width: 400px;
+    min-height: 200px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    white-space: pre-line;
+    margin-left: 16px;
+}
+
+.main-content {
+    background-color: white;
+}
+
+.footer-content {
+    /* Add your styles for the footer here */
+}

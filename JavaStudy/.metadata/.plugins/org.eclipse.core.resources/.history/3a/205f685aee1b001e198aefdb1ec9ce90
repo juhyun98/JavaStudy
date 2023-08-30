@@ -1,0 +1,14 @@
+package 보충수업;
+
+public class PBKJajangmyeon {
+	
+	public abstract void makeJajang() {
+		
+	}
+	
+	
+	
+	
+	
+
+}

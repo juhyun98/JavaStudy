@@ -1,0 +1,11 @@
+package ex02연산자;
+
+public class test {
+
+	public static void main(String[] args) {
+		double num = 10.5;
+		System.out.println(num);
+
+	}
+
+}

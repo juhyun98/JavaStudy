@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    /* 
+        html,body
+        └ # whole
+            └ # mainframe
+                ├ # main-content
+                │   ┝ # header
+                │   ├ # main
+                │   │   ┝ . searchbar
+                │   │   │   └ . searchbar-box
+                │   │   │       ├ . searchbar-box-window
+                │   │   │       └ . searchbar-box-button
+                │   │   ├ . slick
+                │   │   │   └ . slick-album
+                │   │   ├ . category-info
+                │   │   ├ . category-box
+                │   │   │   └ . category-box-ol
+                │   │   │       ├ category-item
+                │   │   │       ├ category-item
+                │   │   │       ├ category-item
+                │   │   │       ├ category-item
+                │   │   │       ├ category-item
+                │   │   │       ├ category-item
+                │   │   │       ├ category-item
+                │   │   │       └ category-item
+                │   │   ├ . mapbox
+                │   │   │   └ . map
+                │   │   └ . communityframe
+                │   │       └ . communitybox
+                │   │           ├ . communitybox-intro
+                │   │           │   ├ . seeall-arrow
+                │   │           │   └ . seeall
+                │   │           └ . communitybox-contents
+                │   │               ├ . communitybox-content
+                │   │               ├ . communitybox-content
+                │   │               ├ . communitybox-content
+                │   │               └ . communitybox-content
+                │   │                   └ . communitybox-content-img
+                │   └ # footer 
+                └ # main-navbar
+                    └ . navbar-ul
+                        ├ . navbar-li
+                        ├ . navbar-li
+                        ├ . navbar-li
+                        ├ . navbar-li
+                        └ . navbar-li
+    */
+        * {
+            margin: 0px;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ::selection {
+            background-color: rgb(255, 247, 224);
+        }
+
+        #whole {
+            display: grid;
+            place-items: center; 
+            height: 100vh; 
+            width: 100%;
+        }
+
+
+        #mainframe {
+            width: 440px;
+            /* chain of height */
+            height: auto; 
+            background-color: rgb(162, 162, 162);
+            box-shadow: 10px 0px 20px -10px rgba(0,0,0,0.2), -10px 0px 20px -10px rgba(0,0,0,0.2); /* 그림자 수정 */
+        }
+
+
+        #header {
+            width: 440px;
+            height: 48px;
+            background-color: gray;
+            z-index: 100;
+
+            position: sticky;
+            top: 0px;
+            display: block;
+
+            text-align: center;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+        }
+        #header img {
+        margin-right: 50px; /* Add this to move "FriendsFit" to the right by 10px */
+    
+    }
+        
+        #my-page-button {
+            background-color: #4CAF50; /* Green color, you can change this */
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+
+        #main {
+            width: 440px;
+            /* chain of height */
+            height: auto;
+            position: relative;
+            
+            background-color: gray;
+            min-height: calc(100vh - 48px);
+
+            display: block;
+
+        }
+        .category-box-ol{
+            padding-top: 20px;
+            padding-left: 26px;
+            padding-right: 26px;
+            width: 388px;
+            height: 190px;
+            background-color: white;
+            text-align: center;
+            list-style-type: none;
+            cursor: pointer;
+        }
+        .categories {
+            width: 90.994px;
+            height: 90.994px;
+            float: left;
+        }
+        #line {
+            height: 2px;
+            background: rgb(214, 214, 214);
+        }
+
+        #main-content {
+            width: 440px;
+            /* chain of height */
+            height: auto;
+        }
+
+        #main-navbar {
+            width: 440px;
+            height: 65px;
+            border-top: 0.909px;
+        }
+
+        #footer {
+            width: 380px;
+            height: 210px;
+
+            padding: 30px 30px calc(30px);
+            background-color: rgb(245, 245, 245);
+            border-top: 4px solid rgb(214,214,214);
+        }
+
+        
+        .navbar {
+            background-color: white;
+            position: sticky;
+            bottom: 0px;
+            height: 65px;
+            width: 100%;
+            z-index: 10;
+            border-top: 1px solid rgba(237, 237, 237, 0.725);
+        }
+
+        .navbar-ul {
+            padding: 0px;
+            height: 65px;
+            width: 440px;
+            background-color: white;
+        
+        }
+
+        .navbar-li {
+            float: left;
+            
+            width: 87.997px;
+            height: 65px;
+
+            list-style: none;
+
+            text-align: center;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="whole">
+        <div id="mainframe">
+            
+            <div id="main-content">
+                <div id="header">
+                    <img src="logo.png" alt="" style="width: 200px; margin-top: 4px;">
+                    <button id="my-page-button">마이페이지</button>
+                    <!-- <h1>Our fit</h1> -->
+
+                </div>
+
+                <div id="main" style="background-color: white;">
+                    <nav style="width: 440px; height: 400px;">
+                        <ol class="category-box-ol">
+                            <li class="categories">헬스장<br>
+                                <img src="img/health.png" style="width: 70px;">
+                            </li>
+                            <li class="categories">수영<br>
+                                <img src="img/free-icon-swimming-3144982.png" style="width: 60px; margin-top: 5px;">
+                            </li>
+                            <li class="categories">필라테스</li>
+                            <li class="categories">크로스핏</li>
+                            <li class="categories">배드민턴</li>
+                            <li class="categories">클라이밍</li>
+                            <li class="categories">무도장</li>
+                            <li class="categories">스쿼시</li>
+                        </ol>
+                        <div id="line" type="line"></div>
+                    </nav>
+                </div>
+
+                <div id="footer">
+                    <h1>Ourfit</h1>
+                    피트니스크루<br>
+                    팀장 김대현: ysm691611@naver.com<br>
+                    변지협 오주현 류혜림 염다영<br>
+                    인공지능사관학교<br>
+                    @all rights reserved
+                
+                </div>
+
+            </div>
+            <div id="main-navbar" class="navbar">
+                <ul class="navbar-ul">
+
+                    <li selected class="navbar-li">홈</li>
+                    <li class="navbar-li">지도</li>
+                    <li class="navbar-li">커뮤니티</li>
+                    <li class="navbar-li">컬럼</li>
+                    <li class="navbar-li">OCR</li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>

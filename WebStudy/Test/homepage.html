@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #whole {
+            display: grid;
+            place-items: center; 
+            height: 100vh; 
+            width: 100%;
+        }
+
+        #mainframe {
+            width: 440px;
+            /* chain of height */
+            height: 1857.390px; 
+            
+            box-shadow: 10px 0px 20px -10px rgba(0,0,0,0.2), -10px 0px 20px -10px rgba(0,0,0,0.2); /* 그림자 수정 */
+        }
+        #mainframeTop {
+            width: 440px;
+            /* chain of height */
+            height: 1800px;
+        }
+        #logo-top {
+            width: 430px;
+            height: 48px;
+            background-color: gray;
+            z-index: 100;
+
+            position: sticky;
+            top: 0px;
+            display: block;
+
+            text-align: center;
+        }
+        #logo-top {
+        /* Existing styles... */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+        /* padding: 0 10px; Add some padding to give space between logo and button */
+    }
+
+    #my-page-button {
+        background-color: #4CAF50; /* Green color, you can change this */
+        color: white;
+        border: none;
+        padding: 6px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        padding-right: 10px;
+        margin-right: 10px;
+    }
+
+
+        #screen-top {
+            width: 440px;
+            /* chain of height */
+            height: 200px;
+            position: relative;
+            
+            background-color: gray;
+            /* min-height: calc(100vh - 48px); */
+
+            display: block;
+
+        }
+
+        .category-box-ol{
+            padding-left: 26px;
+            padding-right: 26px;
+            width: 388px;
+            height: 190px;
+            background-color: white;
+            text-align: center;
+            list-style-type: none;
+            cursor: pointer;
+        }
+
+        .categories {
+            width: 90.994px;
+            height: 85.994px;
+            float: left;
+        }
+
+        #line {
+            height: 2px;
+            background: rgb(214, 214, 214);
+        }
+        #screen-main {
+            width: 440px;
+            /* chain of height */
+            height: 400px;
+            position: relative;
+            
+            background-color: gray;
+            /* min-height: calc(100vh - 48px); */
+
+            display: block;
+
+        }
+        #blank {
+            height: 8px;
+            background: rgb(214, 214, 214);
+        }
+        
+</style>
+<body>
+    <div id="whole">
+        <div id="mainframe">
+            <div id="mainframeTop">
+                <div id="logo-top">
+                    FriendsFit
+                    <button id="my-page-button">마이페이지</button>
+                </div>
+                <div class="logo-top">
+
+                </div>
+                <div id="screen-top" style="background-color: white;">
+                    <nav style="width: 440px; height: 400px;">
+                        <ol class="category-box-ol">
+                            <li class="categories">헬스장</li>
+                            <li class="categories">수영</li>
+                            <li class="categories">필라테스</li>
+                            <li class="categories">크로스핏</li>
+                            <li class="categories">배드민턴</li>
+                            <li class="categories">클라이밍</li>
+                            <li class="categories">무도장</li>
+                            <li class="categories">스쿼시</li>
+                        </ol>
+                    </nav>
+                    </div>
+                    <div id="line" type="line"></div>
+                    <div id="screen-main" style="background-color: white;">
+                        
+                    </div>
+                    <div id="blank" type="line"></div>
+                    
+                </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+package user;
+
+public class UserDTO {
+	private String member_id;
+	private String passwd;
+	private String name_id;
+	private String postcode1
+	private String addr1
+	private String addr2
+	private int age;
+	private String userPhone;
+	private String career;
+	private String userAddr;
+	private String userPoint;
+	
+}
