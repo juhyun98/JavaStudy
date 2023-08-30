@@ -50,9 +50,9 @@
 									<li><input type="submit" value="LogIn" class="button fit"></li>
 								</form>
 						</ul>
-						<ul class="actions vertical">
+						<ul class="actions vertical.do">
 							<li><h5>회원가입</h5></li>
-								<form action="JoinService.do" method="post">
+								<form action="JoinService" method="post">
 									<li><input type="text" name="email" placeholder="Email을 입력하세요"></li>
 									<li><input type="password" name="pw" placeholder="PW를 입력하세요"></li>
 									<li><input type="text" name="phone" placeholder="전화번호를 입력하세요"></li>
