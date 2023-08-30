@@ -30,7 +30,7 @@
 						<nav>
 							<% if (info != null) { %>
 								<a href="update.jsp">개인정보수정</a>
-								<a href="LogoutService">로그아웃</a>
+								<a href="LogoutService.do">로그아웃</a>
 							<% }else { %>
 								<a href="#menu">로그인</a>
 							<% } %>
@@ -166,7 +166,7 @@
 												out.print(list.get(i).getSend_date() + ")");
 												
 												out.print("------------");
-												out.print("<a href='MsgDelete?num=");
+												out.print("<a href='MsgDelete.do?num=");
 												out.print(list.get(i).getNum() + "' style='border: 0'>삭제</a>");
 												out.print("</li>");
 												out.print("<br>");
@@ -176,7 +176,7 @@
 										<% }else { %>
 											<li>로그인을 하세요.</li>
 										<% } %>
-										<li><a href="MsgAllDelete" class="button next scrolly">전체삭제하기</a></li>
+										<li><a href="MsgAllDelete.do" class="button next scrolly">전체삭제하기</a></li>
 									</ul>
 								</div>
 							</section>
@@ -187,7 +187,7 @@
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form action="MsgSendService" method="post">
+								<form action="MsgSendService.do" method="post">
 								<div class="field half first">
 										<label for="name">Name</label>
 										<input type="text" name="send_name" id="name" placeholder="보내는 사람 이름" />
