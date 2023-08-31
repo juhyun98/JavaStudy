@@ -3,14 +3,14 @@
 <%@page import="com.model.MemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>  
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<title>Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -18,7 +18,7 @@
 	</head>
 	<body>
 		<%
-		// ·Î±×ÀÎÇÑ »ç¶÷ÀÇ Á¤º¸ °¡Á®¿À±â
+		// ë¡œê·¸ì¸í•œ ì‚¬ëžŒì˜ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 			MemberDTO info = (MemberDTO)session.getAttribute("info");
 		%>
 		<!-- Wrapper -->
@@ -29,12 +29,12 @@
 						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
 						<nav>
 							<% if (info != null) { %>
-								<a href="update.jsp">°³ÀÎÁ¤º¸¼öÁ¤</a>
-								<a href="LogoutService.do">·Î±×¾Æ¿ô</a>
+								<a href="update.jsp">ê°œì¸ì •ë³´ìˆ˜ì •</a>
+								<a href="LogoutService.do">ë¡œê·¸ì•„ì›ƒ</a>
 							<% }else { %>
-								<a href="#menu">·Î±×ÀÎ</a>
+								<a href="#menu">ë¡œê·¸ì¸</a>
 							<% } %>
-							<!-- ·Î±×ÀÎ ÈÄ Logout.jsp·Î ÀÌµ¿ÇÒ ¼ö ÀÖ´Â'·Î±×¾Æ¿ô'¸µÅ©¿Í '°³ÀÎÁ¤º¸¼öÁ¤'¸µÅ©¸¦ Ãâ·ÂÇÏ½Ã¿À. -->
+							<!-- ë¡œê·¸ì¸ í›„ Logout.jspë¡œ ì´ë™í•  ìˆ˜ ìžˆëŠ”'ë¡œê·¸ì•„ì›ƒ'ë§í¬ì™€ 'ê°œì¸ì •ë³´ìˆ˜ì •'ë§í¬ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤. -->
 								
 								
 						</nav>
@@ -43,20 +43,20 @@
 				<!-- Menu -->
 					<nav id="menu">	
 						<ul class="links">
-							<li><h5>·Î±×ÀÎ</h5></li>
+							<li><h5>ë¡œê·¸ì¸</h5></li>
 								<form action="LoginService.do" method="post">
-									<li><input type="text" name="email" placeholder="EmailÀ» ÀÔ·ÂÇÏ¼¼¿ä"></li>
-									<li><input type="password" name="pw" placeholder="PW¸¦ ÀÔ·ÂÇÏ¼¼¿ä"></li>
+									<li><input type="text" name="email" placeholder="Emailì„ ìž…ë ¥í•˜ì„¸ìš”"></li>
+									<li><input type="password" name="pw" placeholder="PWë¥¼ ìž…ë ¥í•˜ì„¸ìš”"></li>
 									<li><input type="submit" value="LogIn" class="button fit"></li>
 								</form>
 						</ul>
 						<ul class="actions vertical">
-							<li><h5>È¸¿ø°¡ÀÔ</h5></li>
+							<li><h5>íšŒì›ê°€ìž…</h5></li>
 								<form action="JoinService.do" method="post">
-									<li><input type="text" name="email" placeholder="EmailÀ» ÀÔ·ÂÇÏ¼¼¿ä"></li>
-									<li><input type="password" name="pw" placeholder="PW¸¦ ÀÔ·ÂÇÏ¼¼¿ä"></li>
-									<li><input type="text" name="phone" placeholder="ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä"></li>
-									<li><input type="text" name="addr" placeholder="ÁýÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä"></li>
+									<li><input type="text" name="email" placeholder="Emailì„ ìž…ë ¥í•˜ì„¸ìš”"></li>
+									<li><input type="password" name="pw" placeholder="PWë¥¼ ìž…ë ¥í•˜ì„¸ìš”"></li>
+									<li><input type="text" name="phone" placeholder="ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”"></li>
+									<li><input type="text" name="addr" placeholder="ì§‘ì£¼ì†Œë¥¼ ìž…ë ¥í•˜ì„¸ìš”"></li>
 									<li><input type="submit" value="JoinUs" class="button fit"></li>
 								</form>
 						</ul>
@@ -67,18 +67,18 @@
 							<header class="major">
 							
 									<% if(info != null){%>
-										<h1><%= info.getEmail() %>´Ô È¯¿µÇÕ´Ï´Ù!</h1>
+										<h1><%= info.getEmail() %>ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!</h1>
 									<% }else { %>
-										<h1>·Î±×ÀÎÀ» ¸ÕÀú ÇØÁÖ¼¼¿ä.</h1>
+										<h1>ë¡œê·¸ì¸ì„ ë¨¼ì € í•´ì£¼ì„¸ìš”.</h1>
 										<% } %>
 										
-								<!-- ·Î±×ÀÎ ÈÄ ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ¼¼¼Ç¾ÆÀÌµð·Î ¹Ù²Ù½Ã¿À.
-									 ex)smart´Ô È¯¿µÇÕ´Ï´Ù -->
+								<!-- ë¡œê·¸ì¸ í›„ ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìžì˜ ì„¸ì…˜ì•„ì´ë””ë¡œ ë°”ê¾¸ì‹œì˜¤.
+									 ex)smartë‹˜ í™˜ì˜í•©ë‹ˆë‹¤ -->
 							</header>
 							<div class="content">
-								<p>¾Æ·¡´Â Áö±Ý±îÁö ¹è¿î À¥ ±â¼úµéÀÔ´Ï´Ù.<br></p>
+								<p>ì•„ëž˜ëŠ” ì§€ê¸ˆê¹Œì§€ ë°°ìš´ ì›¹ ê¸°ìˆ ë“¤ìž…ë‹ˆë‹¤.<br></p>
 								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">È®ÀÎÇÏ±â</a></li>
+									<li><a href="#one" class="button next scrolly">í™•ì¸í•˜ê¸°</a></li>
 								</ul>
 							</div>
 						</div>
@@ -95,7 +95,7 @@
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">HTML</a></h3>
-										<p>È¨ÆäÀÌÁö¸¦ ¸¸µå´Â ±âÃÊ ¾ð¾î</p>
+										<p>í™ˆíŽ˜ì´ì§€ë¥¼ ë§Œë“œëŠ” ê¸°ì´ˆ ì–¸ì–´</p>
 									</header>
 								</article>
 								<article>
@@ -104,7 +104,7 @@
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">CSS</a></h3>
-										<p>HTMLÀ» µðÀÚÀÎÇØÁÖ´Â ¾ð¾î</p>
+										<p>HTMLì„ ë””ìžì¸í•´ì£¼ëŠ” ì–¸ì–´</p>
 									</header>
 								</article>
 								<article>
@@ -113,7 +113,7 @@
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">Servlet/JSP</a></h3>
-										<p>Java¸¦ ±âº»À¸·Î ÇÑ À¥ ÇÁ·Î±×·¡¹Ö ¾ð¾î/½ºÅ©¸³Æ® ¾ð¾î</p>
+										<p>Javaë¥¼ ê¸°ë³¸ìœ¼ë¡œ í•œ ì›¹ í”„ë¡œê·¸ëž˜ë° ì–¸ì–´/ìŠ¤í¬ë¦½íŠ¸ ì–¸ì–´</p>
 									</header>
 								</article>
 								<article>
@@ -122,7 +122,7 @@
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">JavaScript</a></h3>
-										<p>HTML¿¡ ±âº»ÀûÀÎ ·ÎÁ÷À» Á¤ÀÇÇÒ ¼ö ÀÖ´Â ¾ð¾î</p>
+										<p>HTMLì— ê¸°ë³¸ì ì¸ ë¡œì§ì„ ì •ì˜í•  ìˆ˜ ìžˆëŠ” ì–¸ì–´</p>
 									</header>
 								</article>
 								<article>
@@ -131,7 +131,7 @@
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">MVC</a></h3>
-										<p>À¥ ÇÁ·ÎÁ§Æ® Áß °¡Àå ¸¹ÀÌ »ç¿ëÇÏ´Â µðÀÚÀÎÆÐÅÏ</p>
+										<p>ì›¹ í”„ë¡œì íŠ¸ ì¤‘ ê°€ìž¥ ë§Žì´ ì‚¬ìš©í•˜ëŠ” ë””ìžì¸íŒ¨í„´</p>
 									</header>
 								</article>
 								<article>
@@ -140,7 +140,7 @@
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">Web Project</a></h3>
-										<p>¿©·¯ºÐÀÇ ÃÖÁ¾ÇÁ·ÎÁ§Æ®¿¡ À¥ ±â¼úÀ» È°¿ëÇÏ¼¼¿ä!</p>
+										<p>ì—¬ëŸ¬ë¶„ì˜ ìµœì¢…í”„ë¡œì íŠ¸ì— ì›¹ ê¸°ìˆ ì„ í™œìš©í•˜ì„¸ìš”!</p>
 									</header>
 								</article>
 							</section>
@@ -148,7 +148,7 @@
 							<section id="two">
 								<div class="inner">
 									<header class="major">
-										<h2>³ª¿¡°Ô ¿Â ¸Þ¼¼Áö È®ÀÎÇÏ±â</h2>
+										<h2>ë‚˜ì—ê²Œ ì˜¨ ë©”ì„¸ì§€ í™•ì¸í•˜ê¸°</h2>
 									</header>
 									<p></p>
 									<ul class="actions">
@@ -167,16 +167,16 @@
 												
 												out.print("------------");
 												out.print("<a href='MsgDelete.do?num=");
-												out.print(list.get(i).getNum() + "' style='border: 0'>»èÁ¦</a>");
+												out.print(list.get(i).getNum() + "' style='border: 0'>ì‚­ì œ</a>");
 												out.print("</li>");
 												out.print("<br>");
 												
 											}
 										%>	
 										<% }else { %>
-											<li>·Î±×ÀÎÀ» ÇÏ¼¼¿ä.</li>
+											<li>ë¡œê·¸ì¸ì„ í•˜ì„¸ìš”.</li>
 										<% } %>
-										<li><a href="MsgAllDelete.do" class="button next scrolly">ÀüÃ¼»èÁ¦ÇÏ±â</a></li>
+										<li><a href="MsgAllDelete.do" class="button next scrolly">ì „ì²´ì‚­ì œí•˜ê¸°</a></li>
 									</ul>
 								</div>
 							</section>
@@ -190,11 +190,11 @@
 								<form action="MsgSendService.do" method="post">
 								<div class="field half first">
 										<label for="name">Name</label>
-										<input type="text" name="send_name" id="name" placeholder="º¸³»´Â »ç¶÷ ÀÌ¸§" />
+										<input type="text" name="send_name" id="name" placeholder="ë³´ë‚´ëŠ” ì‚¬ëžŒ ì´ë¦„" />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="text" name="receive_email" id="email" placeholder="º¸³¾ »ç¶÷ ÀÌ¸ÞÀÏ"/>
+										<input type="text" name="receive_email" id="email" placeholder="ë³´ë‚¼ ì‚¬ëžŒ ì´ë©”ì¼"/>
 									</div>
 
 									<div class="field">
@@ -216,9 +216,9 @@
 										<% if (info != null){ %>
 											<a href="#"><%=info.getEmail() %></a>
 										<% }else { %>
-											<a href="#">·Î±×ÀÎ ÇÑ »ç¶÷ÀÇ ÀÌ¸ÞÀÏÀ» Ãâ·Â</a>
+											<a href="#">ë¡œê·¸ì¸ í•œ ì‚¬ëžŒì˜ ì´ë©”ì¼ì„ ì¶œë ¥</a>
 										<% } %>
-										<!-- ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ÀÌ¸ÞÀÏÀ» Ãâ·ÂÇÏ½Ã¿À -->
+										<!-- ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìžì˜ ì´ë©”ì¼ì„ ì¶œë ¥í•˜ì‹œì˜¤ -->
 									</div>
 								</section>
 								<section>
@@ -228,9 +228,9 @@
 										<%if (info != null) { %>
 											<span><%=info.getPhone() %></span>
 										<% }else { %>
-											<span>·Î±×ÀÎ ÇÑ »ç¶÷ÀÇ ÀüÈ­¹øÈ£¸¦ Ãâ·Â</span>
+											<span>ë¡œê·¸ì¸ í•œ ì‚¬ëžŒì˜ ì „í™”ë²ˆí˜¸ë¥¼ ì¶œë ¥</span>
 										<% } %>
-										<!-- ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ÀüÈ­¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À -->
+										<!-- ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìžì˜ ì „í™”ë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤ -->
 									</div>
 								</section>
 								<section>
@@ -240,9 +240,9 @@
 										<%if (info != null) { %>
 											<span><%=info.getAddr() %></span>
 										<% }else { %>
-											<span>·Î±×ÀÎ ÇÑ »ç¶÷ÀÇ ÁýÁÖ¼Ò¸¦ Ãâ·Â</span>
+											<span>ë¡œê·¸ì¸ í•œ ì‚¬ëžŒì˜ ì§‘ì£¼ì†Œë¥¼ ì¶œë ¥</span>
 										<% } %>
-										<!-- ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ÁýÁÖ¼Ò¸¦ Ãâ·ÂÇÏ½Ã¿À -->
+										<!-- ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìžì˜ ì§‘ì£¼ì†Œë¥¼ ì¶œë ¥í•˜ì‹œì˜¤ -->
 									</div>
 								</section>
 							</section>					

@@ -23,4 +23,13 @@
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="user.UserDAO"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="com.controller.JoinService"/>
+    <fullyQualifiedTypeName name="com.controller.LoginService"/>
+    <fullyQualifiedTypeName name="com.controller.LogoutService"/>
+    <fullyQualifiedTypeName name="com.controller.UpdateService"/>
+    <fullyQualifiedTypeName name="com.controller.MsgSendService"/>
+    <fullyQualifiedTypeName name="com.controller.MsgAllDelete"/>
+    <fullyQualifiedTypeName name="com.controller.MsgDelete"/>
+    <fullyQualifiedTypeName name="com.front.ICommand"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>
