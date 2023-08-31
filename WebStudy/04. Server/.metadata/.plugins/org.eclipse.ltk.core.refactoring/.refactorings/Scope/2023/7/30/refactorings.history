@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Scope/src/main/webapp/ex05_getSessionScope.jsp&apos; to &apos;ex05_setSessionScope.jsp&apos;" description="Rename resource &apos;ex05_getSessionScope.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/ex05_getSessionScope.jsp" name="ex05_setSessionScope.jsp" stamp="1690342657600" updateReferences="true"/>
-</session>

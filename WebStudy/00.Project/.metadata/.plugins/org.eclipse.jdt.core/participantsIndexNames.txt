@@ -1,7 +1,0 @@
-INDEX VERSION 1.132
-C:\Users\gjaischool\Desktop\WebStudy\00.Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1192589190.index
-\FriendsFit\src\main\java
-C:\Users\gjaischool\Desktop\WebStudy\00.Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4023197742.index
-\MessageSystem\src
-C:\Users\gjaischool\Desktop\WebStudy\00.Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\644232238.index
-\FriendsFit\src\main\java
