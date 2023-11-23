@@ -4,36 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: Pretendard;
+        }
+
+        .flip {
+            width: 200px;
+            height: 250px;
+            position: relative;
+            perspective: 1100px;
+            margin: 2rem;
+            cursor: pointer; /* 추가: 클릭 가능한 커서 설정 */
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1.5s; /* 변경: 트랜지션 속성 순서 변경 */
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .front {
+            background: tomato;
+        }
+
+        .back {
+            background: royalblue;
+            transform: rotateY(180deg);
+        }
+
+        .flip.clicked .card { /* 변경: hover 제거, clicked 클래스만 사용 */
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <span id="like">0</span>
+    <div class="flip" onclick="flipCard(this)">  
+        <div class="card">
+            <!-- 앞면 -->
+            <div class="front">
+                <h1>앞면</h1>
+            </div>
+            <!-- 뒷면 -->
+            <div class="back">
+                <h1>뒷면</h1>
+            </div>
+        </div>
     </div>
-    <button onclick="plus()">좋아요</button>
-    <button onclick="minus()">싫어요</button>
 
+    <div class="flip" onclick="flipCard(this)">  
+        <div class="card">
+            <!-- 앞면 -->
+            <div class="front">
+                <h1>앞면</h1>
+            </div>
+            <!-- 뒷면 -->
+            <div class="back">
+                <h1>뒷면</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip" onclick="flipCard(this)">  
+        <div class="card">
+            <!-- 앞면 -->
+            <div class="front">
+                <h1>앞면</h1>
+            </div>
+            <!-- 뒷면 -->
+            <div class="back">
+                <h1>뒷면</h1>
+            </div>
+        </div>
+    </div>
+    
     <script>
-        // 실습문제 ) 버튼을 눌렀을 때 숫자가 변경되는 함수를 구현하시오.
-        // 1) 좋아요버튼 : 숫자가 1씩 증가
-        // 2) 싫어요버튼 : 숫자가 1씩 감소
-
-        // 1. 버튼을 클릭한다.
-        // 2. 숫자가 증가된다.
-        // - 버튼을 클릭했을 때 동작하는 함수를 생성
-        // - id가 'like'인 HTML 객체에 접근
-        // - innerText를 활용해서 증가된 숫자를 적용
-        
-        let plus = function(){
-            const like = document.getElementById("like");
-            like.innerText = parseInt(like.innerText) + 1;
+        function flipCard(element) {
+            element.classList.toggle('clicked');
         }
-
-        let minus = function(){
-            const like = document.getElementById("like");
-            like.innerText = parseInt(like.innerText) - 1;
-        }
-         
     </script>
-
 </body>
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #3d4e56fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .body {
+      display: flex;
+    }
+
+    button {
+      width: 70px;
+      height: 70px;
+      border: none;
+      border-radius: 8px;
+      margin: 12px;
+      cursor: move;
+      font-size: 30px;
+      background: #eaeaea4f;
+    }
+
+    .container {
+      margin: 10px;
+      padding: 10px;
+      background-color: #b5c1dc57;
+      border-radius: 8px;
+    }
+
+    .container2 {
+      margin: 10px;
+      padding: 55px;
+      background-color: #b5c1dc57;
+      border-radius: 8px;
+    }
+
+    .draggable.dragging {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="body">
+    <div class="container">
+      <button class="draggable item" draggable="true">🦊</button>
+    </div>
+    <!-- <div class="container2" id="custom-drop-area">
+    </div> -->
+  </div>
+
+  <script>
+    
+let initialX = null,
+  initialY = null;
+
+function initTouch(e) {
+  initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
+  initialY = `${e.touches ? e.touches[0].clientY : e.clientY}`;
+};
+
+function swipeDirection(e) {
+  if (initialX !== null && initialY !== null) {
+    const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`,
+      currentY = `${e.touches ? e.touches[0].clientY : e.clientY}`;
+
+    let diffX = initialX - currentX,
+      diffY = initialY - currentY;
+
+    Math.abs(diffX) > Math.abs(diffY)
+    ? (
+      0 < diffX
+      ? console.log("to left")
+      : console.log("to right")
+    )
+    : (
+      0 < diffY
+      ? console.log("to top")
+      : console.log("to bottom")
+    )
+
+    initialX = null;
+    initialY = null;
+  }
+}
+
+window.addEventListener("touchstart", initTouch);
+window.addEventListener("touchmove", swipeDirection);
+window.addEventListener("mousedown", (e) => {
+  initTouch(e),
+  window.addEventListener("mousemove", swipeDirection)
+});
+window.addEventListener("mouseup", () => {
+  window.removeEventListener("mousemove", swipeDirection);
+});
+  </script>
+</body>
+</html>

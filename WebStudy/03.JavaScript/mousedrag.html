@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Move Event Example</title>
+
+  <style>
+        body {
+  background-color: #3d4e56fa;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  display: flex;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 8px;
+  margin: 12px;
+  cursor: move;
+  font-size: 30px;
+  background: #eaeaea4f;
+}
+
+.container {
+  margin: 10px;
+  padding: 10px;
+  background-color: #b5c1dc57;
+  border-radius: 8px;
+}
+  
+  .container2 {
+  margin: 10px;
+  padding: 55px;
+  background-color: #b5c1dc57;
+  border-radius: 8px;
+}
+
+
+.draggable.dragging {
+  opacity: 0.5;
+}
+  </style>
+</head>
+<body>
+    <div class="body">
+      <div class="container">
+        <button class="draggable item" draggable="true">🦊</button>
+      </div>
+      <div class="container2">
+      </div>
+    </div>
+<script>
+  var startX, startY, endX, endY; // 시작 및 종료 좌표 변수
+
+// 마우스를 클릭했을 때 호출되는 함수
+document.addEventListener("mousedown", function(event) {
+    startX = event.clientX; // 첫 클릭한 x 좌표
+    startY = event.clientY; // 첫 클릭한 y 좌표
+});
+
+// 마우스를 뗐을 때 호출되는 함수
+document.addEventListener("mouseup", function(event) {
+    endX = event.clientX; // 마지막으로 뗀 x 좌표
+    endY = event.clientY; // 마지막으로 뗀 y 좌표
+
+    // 첫 클릭한 위치와 마지막으로 뗀 위치의 좌표를 출력 (또는 원하는 대로 처리)
+    console.log("첫 클릭 위치: (" + startX + ", " + startY + ")");
+    console.log("마지막 클릭 위치: (" + endX + ", " + endY + ")");
+});
+</script>
+
+</body>
+</html>

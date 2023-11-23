@@ -1,0 +1,92 @@
+let currentDroppable = null;
+let originalPosition = { x: 0, y: 0 };
+
+ball.onmousedown = function (event) {
+    // 이전 위치 저장
+    originalPosition.x = ball.getBoundingClientRect().left;
+    originalPosition.y = ball.getBoundingClientRect().top;
+
+    let shiftX = event.clientX - ball.getBoundingClientRect().left;
+    let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+    ball.style.position = 'absolute';
+    ball.style.zIndex = 1000;
+    document.body.append(ball);
+
+    moveAt(event.pageX, event.pageY);
+
+    function moveAt(pageX, pageY) {
+        ball.style.left = pageX - shiftX + 'px';
+        ball.style.top = pageY - shiftY + 'px';
+    }
+
+    function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+
+        ball.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        ball.hidden = false;
+
+        if (!elemBelow) return;
+
+        let droppableBelow = elemBelow.closest('.droppable');
+        if (currentDroppable != droppableBelow) {
+            if (currentDroppable) {
+                leaveDroppable(currentDroppable);
+            }
+            currentDroppable = droppableBelow;
+            if (currentDroppable) {
+                enterDroppable(currentDroppable);
+            }
+        }
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+
+    ball.onmouseup = function () {
+        document.removeEventListener('mousemove', onMouseMove);
+        ball.onmouseup = null;
+
+        // 마우스를 뗄 때, 원래 위치로 이동
+        ball.style.left = originalPosition.x + 'px';
+        ball.style.top = originalPosition.y + 'px';
+
+        // 이미지 크기 받아오기
+        var imgElement = document.querySelector('.img');
+        var imgWidth = imgElement.width;
+        var imgHeight = imgElement.height;
+
+        // 새로운 div 생성
+        var newDivElement = document.createElement('div');
+        newDivElement.style.width = imgWidth + 'px';
+        newDivElement.style.height = imgHeight + 'px';
+        newDivElement.style.position = 'absolute';
+        newDivElement.style.left = originalPosition.x + 'px';
+        newDivElement.style.top = originalPosition.y + 'px';
+
+        // 이미지를 div 안에 추가
+        newDivElement.appendChild(ball.cloneNode(true));
+
+        // .col-md-4 클래스를 가진 엘리먼트에 추가
+        var colElement = document.querySelector('.img-space');
+        colElement.appendChild(newDivElement);
+
+        // currentDroppable 초기화
+        if (currentDroppable) {
+            leaveDroppable(currentDroppable);
+            currentDroppable = null;
+        }
+    };
+};
+
+function enterDroppable(elem) {
+    elem.style.background = 'pink';
+}
+
+function leaveDroppable(elem) {
+    elem.style.background = '';
+}
+
+ball.ondragstart = function () {
+    return false;
+};
