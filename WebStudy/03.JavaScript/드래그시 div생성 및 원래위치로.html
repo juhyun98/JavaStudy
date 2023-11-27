@@ -1,26 +1,45 @@
-let currentDroppable = null;
-let originalPosition = { x: 0, y: 0 };
+    let currentDroppable = null;
 
-ball.onmousedown = function (event) {
-    // 이전 위치 저장
-    originalPosition.x = ball.getBoundingClientRect().left;
-    originalPosition.y = ball.getBoundingClientRect().top;
+    ball.onmousedown = function(event) {
+    	
+       	// 이미지 엘리먼트 가져오기
+    	var imgElement = document.querySelector('.img');
 
-    let shiftX = event.clientX - ball.getBoundingClientRect().left;
-    let shiftY = event.clientY - ball.getBoundingClientRect().top;
+    	// 이미지의 폭과 높이 가져오기
+    	var imgWidth = imgElement.width;
+    	var imgHeight = imgElement.height;
 
-    ball.style.position = 'absolute';
-    ball.style.zIndex = 1000;
-    document.body.append(ball);
+    	// 새로운 div 엘리먼트 생성
+    	var divElement = document.createElement('div');
 
-    moveAt(event.pageX, event.pageY);
+    	// div에 스타일을 적용하여 이미지 크기로 설정
+    	divElement.style.width = imgWidth + 'px';
+    	divElement.style.height = imgHeight + 'px';
+    	// .col-md-4 클래스를 가진 부모 엘리먼트 가져오기
+    	var colElement = document.querySelector('.img-space');
+    	colElement.innerText = '';
+    	// 생성된 div를 .col-md-4 클래스를 가진 엘리먼트에 추가
+    	
+    	colElement.appendChild(divElement);
+ 
+    	
+    	
+    	
+      let shiftX = event.clientX - ball.getBoundingClientRect().left;
+      let shiftY = event.clientY - ball.getBoundingClientRect().top;
 
-    function moveAt(pageX, pageY) {
+      ball.style.position = 'absolute';
+      ball.style.zIndex = 1000;
+      document.body.append(ball);
+
+      moveAt(event.pageX, event.pageY);
+
+      function moveAt(pageX, pageY) {
         ball.style.left = pageX - shiftX + 'px';
         ball.style.top = pageY - shiftY + 'px';
-    }
+      }
 
-    function onMouseMove(event) {
+      function onMouseMove(event) {
         moveAt(event.pageX, event.pageY);
 
         ball.hidden = true;
@@ -31,62 +50,34 @@ ball.onmousedown = function (event) {
 
         let droppableBelow = elemBelow.closest('.droppable');
         if (currentDroppable != droppableBelow) {
-            if (currentDroppable) {
-                leaveDroppable(currentDroppable);
-            }
-            currentDroppable = droppableBelow;
-            if (currentDroppable) {
-                enterDroppable(currentDroppable);
-            }
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
         }
-    }
+      }
 
-    document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mousemove', onMouseMove);
 
-    ball.onmouseup = function () {
+      ball.onmouseup = function() {
         document.removeEventListener('mousemove', onMouseMove);
         ball.onmouseup = null;
+      };
 
-        // 마우스를 뗄 때, 원래 위치로 이동
-        ball.style.left = originalPosition.x + 'px';
-        ball.style.top = originalPosition.y + 'px';
-
-        // 이미지 크기 받아오기
-        var imgElement = document.querySelector('.img');
-        var imgWidth = imgElement.width;
-        var imgHeight = imgElement.height;
-
-        // 새로운 div 생성
-        var newDivElement = document.createElement('div');
-        newDivElement.style.width = imgWidth + 'px';
-        newDivElement.style.height = imgHeight + 'px';
-        newDivElement.style.position = 'absolute';
-        newDivElement.style.left = originalPosition.x + 'px';
-        newDivElement.style.top = originalPosition.y + 'px';
-
-        // 이미지를 div 안에 추가
-        newDivElement.appendChild(ball.cloneNode(true));
-
-        // .col-md-4 클래스를 가진 엘리먼트에 추가
-        var colElement = document.querySelector('.img-space');
-        colElement.appendChild(newDivElement);
-
-        // currentDroppable 초기화
-        if (currentDroppable) {
-            leaveDroppable(currentDroppable);
-            currentDroppable = null;
-        }
     };
-};
 
-function enterDroppable(elem) {
-    elem.style.background = 'pink';
-}
+    function enterDroppable(elem) {
+      elem.style.background = 'pink';
+    }
 
-function leaveDroppable(elem) {
-    elem.style.background = '';
-}
+    function leaveDroppable(elem) {
+      elem.style.background = '';
+    }
 
-ball.ondragstart = function () {
-    return false;
-};
+    ball.ondragstart = function() {
+      return false;
+    };
